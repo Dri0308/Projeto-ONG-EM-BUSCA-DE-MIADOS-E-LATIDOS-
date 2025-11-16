@@ -137,9 +137,6 @@ exibirVoluntarios();
         tabelaContainer.innerHTML = html;
     };
     exibirVoluntarios();
-};
-const form = document.getElementById(donnerForm);
-if(form) form.addEventListener('submit', handleDonnerSubmit);
 
 const exibirParceiros = () => {
     const parceiros= JSON.parse(localStorage.getItem('parceiros')) || [];
@@ -164,13 +161,12 @@ const exibirParceiros = () => {
     html += '</table>';
     tabelaContainer.innerHTML = html;
 };
-exibirParceiros();
-});
+    exibirParceiros();
 
-const track =document.querySelector('gallery1', 'gallery2');
-const slides = Array.from(track.children);
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
+    const track =document.querySelector('gallery1', 'gallery2');
+    const slides = Array.from(track.children);
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
 
 let currentIndex = 0;
 
@@ -201,5 +197,5 @@ const Templates = {
         <h1>Fale Conosco</h1>
         `,
     };
-});
+
 
