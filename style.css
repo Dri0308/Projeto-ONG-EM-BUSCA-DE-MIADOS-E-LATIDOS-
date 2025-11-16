@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+[class*="col-"]{
+    padding: 15px;
+    box-sizing: border-box;
+}
+.col-1{width: 0 0 8.33%; max-width: 8.33%;}
+.col-2{width: 0 0 16.66%; max-width: 16.66%;}
+.col-3{width: 0 0 25%; max-width: 25%;}
+.col-4{width: 0 0 33.33%; max-width: 33.33%;}
+.col-5{width: 0 0 41.66%; max-width: 41.66%;}
+.col-6{width: 0 0 50%; max-width: 50%;}
+.col-7{width: 0 0 58.33%; max-width: 58.33%;}
+.col-8{width: 0 0 66.66%; max-width: 66.66%;}
+.col-9{width: 0 0 75%; max-width: 75%;}
+.col-10{width: 0 0 83.33%; max-width: 83.33%;}
+.col-11{width: 0 0 91.66%; max-width: 91.66%;}
+.col-12{width: 0 0 100%; max-width: 100%;}
+
+/* Breakpoints */
+@media (min-width: 576px) {
+    .col-sm-6 {flex: 0 0 50%; max-width: 50%;}
+}
+@media (min-width: 768px) {
+    .col-md-4 {flex: 0 0 33.33%; max-width: 33.33%;}
+}
+@media (min-width: 992px) {
+    .col-lg-3 {flex: 0 0 25%; max-width: 25%;}
+}
+@media (min-width: 1200px) {
+    .col-xl-2 {flex: 0 0 16.66%; max-width: 16.66%;}
+}
+@media (min-width: 1400px) {
+    .col-xxl-1 {flex: 0 0 8.33%; max-width: 8.33%;}
+}
+
+:root{
+    --color-primary: #FFE4B5;
+    --color-secondary: #1E3A8A;
+    --color-accent: #FF4500;
+
+    --color-neutral-light: #F3F4F6;
+    --color-neutral-dark: #111827;
+
+    --color-success: #E6E6FA;
+    --color-error: 	#8B0000;
+    --color-warning: #FFD700;
+    --color-info: 	#8B4513;
+
+    --font-family-base: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    --font-family-heading: 'Poppins', 'sans-serif';
+    --font-size-h2: 1.5rem;
+    --font-size-h3: 1.25rem;
+    --font-size-body: 1rem;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 14px;
+    background-color:#FFE4B5 ;
+    color: #333;
+    padding: 40px;
+    margin: 20px;
+}
+
+body.modo-escuro{
+    background-color: #1C1C1C;
+    color: #F0F0F0;
+}
+.chamada{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% ;
+    background: #000;
+    color: #fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 0.75rem;
+    margin: 5;
+}
+.chamada h1{font-size:1.1rem; font-weight:600}
+/*Navegação Principal*/
+nav{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    z-index: 800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 0.5rem 1rem;
+}
+nav .menu-toggle{
+    display: none;
+    color: blue;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.5rem;
+    padding: 1rem 1rem;
+    margin-right: 1rem;
+}
+
+nav .menu-toggle:hover {
+    background: #705386;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap: 2rem;
+    align-items:center;
+}
+
+nav a{
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+    font-weight:600;
+    opacity:0.9;
+}
+nav a:hover, nav a:focus, nav a.active{opacity:1; transform: translateY(-2px);}
+h2{
+    color: #00008B;
+    padding: 2rem 0;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-h2);
+}
+h3{color:#2E8B57; font-family: var(--font-family-base); font-size: var(--font-size-h3); margin-bottom:0.5rem; padding:2rem}
+p{font-size:1rem; margin:0.6rem 0}
+
+/* Apresentação / listas */
+.presentation{list-style:disc; margin:1rem 0; padding-left:1.25rem; font-size:1rem}
+.presentation li{margin:0.4rem 0}
+.presentation li::marker{color:#FF0000}
+
+/*Galerias de Imagens*/
+.galery1{
+    display:flex;
+    margin: 0rem;
+    position: relative;
+    padding: 10px;
+    bottom: 10px;
+}
+.galery2{
+    display:flex;
+    margin: 0rem;
+    position: relative;
+    padding: 10px;
+    bottom: 10px;
+}
+.galery1 img, .galery2 img{
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+figcaption{
+    position: absolute;
+    bottom: -15px;
+}
+.donations-table table{
+    width:100%;
+    border-collapse:collapse;
+    margin:0.75rem 0;
+    background-color: #F0F8FF;
+}
+.donations-table th, .donations-table td{
+    border:1px solid #1C1C1C ;
+    padding:0.75rem;
+    text-align:left;
+}
+.donations-table thead{
+    background-color: #D6F0FF;
+    font-weight: 700;
+}
+/*Formulário de Cadastro*/
+.figure-container{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main-informations, .Address, .address, .randomInformations{
+    background: #CAE1FF; ;
+    border: 1px solid purple;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.business-Informations{
+     background: #c96d6d;
+    border: 1px solid purple;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Form inputs */
+input[type="text"], input[type="email"], input[type="number"], input[type="date"], select, textarea, input[type="file"]{
+    width:100%;
+    padding:0.5rem;
+    margin:0.4rem 0 0.8rem 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font:inherit;
+  
+}
+
+label{font-weight:600; display:block; margin-top:0.25rem}
+
+fieldset{border:0; margin:0 0 1rem 0; padding:0}
+legend{font-weight:700; margin-bottom:0.5rem}
+
+button{
+    border: 2px solid;
+    border-radius: 5px;
+    transform: scale(1,1);
+}
+
+button:hover {
+    background-color: #008B8B;
+}
+
+input:focus{
+    border: 4px solid white;
+}
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+.container-contact{
+    text-align: center;
+    background-color: #CBBBA7;
+    padding: -40px;
+    border-radius: 8px;
+    margin: 20px auto;
+    margin-top: 50px;
+    height:-50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #8B7D70;
+}
+
+footer{
+    text-align:center;
+    padding:0rem;
+    background:#FF82AB;
+    color:#8B4513;
+    margin-top:10rem;
+    font-size:0.875rem;
+}
+@media (max-width: 900px){
+    .galery1{grid-template-columns: repeat(2,1fr)}
+    nav ul{gap:1rem}
+}
+
+@media (max-width: 600px){
+    body{padding-top: calc(var(--header-height) + 120px)}
+    .galery1{grid-template-columns: 1fr}
+    .galery1 img, .galery2 img{height:160px}
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
