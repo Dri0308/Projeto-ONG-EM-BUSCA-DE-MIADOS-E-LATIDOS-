@@ -187,4 +187,19 @@ prevButton.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     updateCarousel();
 });
+const Templates = {
+        home: () => `
+        <h1>Bem-vindo à ONG Em Busca de Miados e Latidos!</h1>
+        `,
+        cadastro: () => `
+        <h1>Cadastro de Voluntários e Empresas Parceiras</h1>
+        `,
+        projeto: () => `
+        <h1>Conheça nossos projetos</h1>
+        `,
+        contato: () => `
+        <h1>Fale Conosco</h1>
+        `,
+    };
+});
 
