@@ -53,4 +53,35 @@ document.addEventListener(DOMContentLoaded, () => {
         voluntarios.push (formData);
         localStorage.setItem('voluntarios', JSON.stringify(voluntarios));
     }
+const handleDonnerSubmit = (event) => {
+        event.preventDefault();
+        const form = document.getElementById("donnerForm");
+        if(!form) return;
+         if (form.dataset.submmiting == 'true') return; //Evitando sobreposição de usuários
+         form.dataset.submmiting = 'true';
+            const nome_empresa = form.nome_empresa.value.trim();
+            const cnpj = form.cnpj.value.trim();
+
+            if( !nome_empresa || !cnpj){
+            alert("Por favor, preencha os campos obrigatórios.");
+            form.dataset.submmiting = 'false'; //Se for vazio, não grava os dados.
+            return;
+            }
+            //Mapear as informações inseridas pelo usuário
+            const formData = {
+            nome,
+            cpf : form.cpf.value.trim(),
+            idade: form.idade.value.trim(),
+            data_nascimento: form.data_nascimento.value.trim(),
+            nome_empresa,
+            razao_social: form.razao_social.value.trim(),
+            cnpj,
+            telefone_comenrcial: form.telefone.value.trim(),
+             dataCadastro: new Date().toLocaleString()
+            }
+
+            let parceiros = JSON.parse(localStorage.getItem('parceiros')) || [];
+        parceiros.push (formData);
+        localStorage.setItem('parceiros', JSON.stringify(parceiros));
+
 
