@@ -83,5 +83,17 @@ const handleDonnerSubmit = (event) => {
             let parceiros = JSON.parse(localStorage.getItem('parceiros')) || [];
         parceiros.push (formData);
         localStorage.setItem('parceiros', JSON.stringify(parceiros));
+const successMessage = document.getElementById('successMessage');
+            if(successMessage){
+                successMessage.classList.add('show');
+                successMessage.scrollIntoView({behavior: "smooth", block: "center"});
+            }
+            setTimeout(() => successMessage.classList.remove('show'), 5000);
 
+            setTimeout(() => {
+                form.reset();
+                form.dataset.submmiting = 'false';
+            }, 2000);
+
+    }
 
