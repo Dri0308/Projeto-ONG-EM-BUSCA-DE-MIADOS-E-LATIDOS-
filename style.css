@@ -177,5 +177,21 @@ figcaption{
     position: absolute;
     bottom: -15px;
 }
+.donations-table table{
+    width:100%;
+    border-collapse:collapse;
+    margin:0.75rem 0;
+    background-color: #F0F8FF;
+}
+.donations-table th, .donations-table td{
+    border:1px solid #1C1C1C ;
+    padding:0.75rem;
+    text-align:left;
+}
+.donations-table thead{
+    background-color: #D6F0FF;
+    font-weight: 700;
+}
+
 
 
