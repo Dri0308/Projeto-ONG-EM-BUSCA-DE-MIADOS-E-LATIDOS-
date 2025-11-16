@@ -137,7 +137,33 @@ exibirVoluntarios();
         tabelaContainer.innerHTML = html;
     };
     exibirVoluntarios();
+};
+const form = document.getElementById(donnerForm);
+if(form) form.addEventListener('submit', handleDonnerSubmit);
 
+const exibirParceiros = () => {
+    const parceiros= JSON.parse(localStorage.getItem('parceiros')) || [];
+    const tabelaContainer = document.getElementById('parceirosTableBody');
+    if(!tabelaContainer) return;
+    if(parceiros.length === 0){
+        tabelaContainer.innerHTML = '<P> Ninguém cadastrado ainda. </p>';
+        return;
+    }
+    let html = '<table border="1" cellpadding="5" cellpadding="0"';
+    html += '<tr><th>Nome</th><tr><th>Nome da Empresa</th><th>Razão Social</th><th>CNPJ</th><th>Telefone Comercial</th><th>Data de Cadastro</th></tr>';
+    parceiros.forEach(parceiro => {
+        html += `<tr>
+        <td>${p.nome}</td>
+        <td>${p.nome_empresa}</td>
+        <td>${p.razao_social}</td>
+        <td>${p.cnpj}</td>
+        <td>${p.telefone_comenrcial}</td>
+        <td>${p.dataCadastro}</td>
+        </tr>`;
+    });
+    html += '</table>';
+    tabelaContainer.innerHTML = html;
+    
 
 });
 
