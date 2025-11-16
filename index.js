@@ -94,6 +94,50 @@ const successMessage = document.getElementById('successMessage');
                 form.reset();
                 form.dataset.submmiting = 'false';
             }, 2000);
+exibirVoluntarios();
+    };
+    const form = document.getElementById('volunteerForm');
+    if(form) form.addEventListener('submit', handleSubmit);
 
-    }
+    const donnerForm = document.getElementById('donnerForm');
+    if(donnerForm) donnerForm.addEventListener('submit', handleDonnerSubmit);
+
+    const exibirVoluntarios = () => {
+        const voluntarios= JSON.parse(localStorage.getItem('voluntarios')) || [];
+        const tabelaContainer = document.getElementById('voluntariosTableBody');
+
+        if(!tabelaContainer) return;
+        if(voluntarios.length === 0){
+            tabelaContainer.innerHTML = '<P> Ninguém cadastrado ainda. </p>';
+            return;
+        }
+
+        let html = '<table border="1" cellpadding="5" cellpadding="0"';
+        html += '<tr><th>Nome</th><th>Email</th><th>CPF</th><th>Idade</th><th>Data de Nascimento</th><th>Telefone</th><th>Endereço</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Disponibilidade</th><th>Área de Atuação</th><th>Possui Animais</th><th>Data de Cadastro</th></tr>';
+
+        voluntarios.forEach(voluntario => {
+            html += `<tr>
+            <td>${v.nome}</td>
+            <td>${v.email}</td>
+            <td>${v.cpf}</td>
+            <td>${v.idade}</td>
+            <td>${v.data_nascimento}</td>
+            <td>${v.telefone}</td>
+            <td>${v.endereco}</td>
+            <td>${v.cep}</td>
+            <td>${v.cidade}</td>
+            <td>${v.estado}</td>
+            <td>${v.disponibilidade}</td>
+            <td>${v.atuacao}</td>
+            <td>${v.possui_animais ? 'Sim' : 'Não'}</td>
+            <td>${v.dataCadastro}</td>
+            </tr>`;
+        });
+        html += '</table>';
+        tabelaContainer.innerHTML = html;
+    };
+    exibirVoluntarios();
+
+
+});
 
